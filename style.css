@@ -1,1 +1,326 @@
-/* Add you CSS here */
+/* Reset default browser styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Body styling - sets font and background for entire page */
+body {
+  font-family: 'Courier New', monospace;
+  background-color: #000;
+  color: #fff;
+  line-height: 1.6;
+  position: relative;
+  overflow-x: hidden;
+  letter-spacing: 0.5px;
+}
+
+/* Background slideshow container */
+.background-slideshow {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -2;
+}
+
+/* Each background image layer */
+.bg-image {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-size: cover;
+  background-position: center;
+  opacity: 0;
+  animation: slideshow 20s infinite;
+}
+
+/* Set each image */
+.bg1 {
+  background-image: url('img/1ldk.jpg');
+  animation-delay: 0s;
+}
+
+.bg2 {
+  background-image: url('img/76ers.jpg');
+  background-position: center top;
+  animation-delay: 5s;
+}
+
+.bg3 {
+  background-image: url('img/nba_24fw_3.jpg');
+  background-position: center top;
+  animation-delay: 10s;
+}
+
+.bg4 {
+  background-image: url('img/neighborhood shoot.webp');
+  animation-delay: 15s;
+}
+
+/* Animation that fades images in and out */
+@keyframes slideshow {
+  0% {
+    opacity: 0;
+  }
+  5% {
+    opacity: 1;
+  }
+  25% {
+    opacity: 1;
+  }
+  30% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+/* Dark overlay to make content readable over background */
+body::before {
+  content: '';
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.6);
+  z-index: -1;
+}
+
+/* Navigation Bar - sticky at top of page */
+.navbar {
+  position: sticky;
+  top: 0;
+  background-color: rgba(0, 0, 0, 0.95);
+  padding: 20px 0;
+  z-index: 100;
+  border-bottom: 3px solid #fff;
+}
+
+/* Remove default list styling */
+.navbar ul {
+  list-style: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0;
+  padding: 0;
+}
+
+/* Space out navigation items */
+.navbar li {
+  margin: 0 25px;
+}
+
+/* Style navigation links */
+.navbar a {
+  color: white;
+  text-decoration: none;
+  font-size: 16px;
+  font-weight: bold;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  padding: 10px 20px;
+  border: 2px solid transparent;
+  transition: all 0.3s;
+}
+
+/* Hover effect on links */
+.navbar a:hover {
+  border: 2px solid #fff;
+  background-color: #fff;
+  color: #000;
+}
+
+/* Container centers content and adds space on sides */
+.container {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+/* Name Section - displays your name prominently */
+.name-section {
+  text-align: center;
+  background-color: rgba(0, 0, 0, 0.9);
+  color: white;
+  padding: 80px 20px;
+  margin-bottom: 40px;
+  border: 3px solid #fff;
+  border-radius: 0;
+}
+
+.name-section h1 {
+  font-size: 56px;
+  margin-bottom: 15px;
+  font-weight: bold;
+  text-transform: uppercase;
+  letter-spacing: 5px;
+  text-shadow: 3px 3px 0px rgba(255, 255, 255, 0.2);
+}
+
+.subtitle {
+  font-size: 18px;
+  color: #fff;
+  text-transform: uppercase;
+  letter-spacing: 3px;
+  font-weight: bold;
+}
+
+/* Bio Section - tells your story */
+.bio-section {
+  background-color: rgba(255, 255, 255, 0.95);
+  padding: 50px;
+  margin-bottom: 40px;
+  border: 3px solid #000;
+  border-radius: 0;
+  color: #000;
+}
+
+.bio-section h2 {
+  color: #000;
+  margin-bottom: 25px;
+  font-size: 36px;
+  font-weight: bold;
+  text-transform: uppercase;
+  letter-spacing: 3px;
+  border-bottom: 3px solid #000;
+  padding-bottom: 10px;
+}
+
+.bio-section p {
+  font-size: 18px;
+  color: #000;
+  line-height: 1.8;
+}
+
+/* Skills Section - shows your abilities */
+.skills-section {
+  background-color: rgba(0, 0, 0, 0.9);
+  padding: 50px;
+  border: 3px solid #fff;
+  border-radius: 0;
+  margin-bottom: 40px;
+}
+
+.skills-section h2 {
+  color: #fff;
+  margin-bottom: 40px;
+  font-size: 36px;
+  text-align: center;
+  font-weight: bold;
+  text-transform: uppercase;
+  letter-spacing: 3px;
+  border-bottom: 3px solid #fff;
+  padding-bottom: 10px;
+}
+
+/* Skills list container */
+.skills-list {
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+}
+
+/* Individual skill card */
+.skill {
+  text-align: center;
+  padding: 30px 20px;
+  margin: 10px;
+  background-color: #fff;
+  border: 3px solid #000;
+  border-radius: 0;
+  width: 200px;
+  transition: all 0.3s;
+}
+
+.skill:hover {
+  background-color: #000;
+  border-color: #fff;
+}
+
+.skill h3 {
+  color: #000;
+  margin-bottom: 10px;
+  font-size: 24px;
+  font-weight: bold;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  transition: color 0.3s;
+}
+
+.skill:hover h3 {
+  color: #fff;
+}
+
+.skill p {
+  color: #666;
+  font-size: 14px;
+  transition: color 0.3s;
+}
+
+.skill:hover p {
+  color: #ccc;
+}
+
+/* Projects Section - showcase your work */
+.projects-section {
+  background-color: rgba(255, 255, 255, 0.95);
+  padding: 50px;
+  margin-bottom: 40px;
+  border: 3px solid #000;
+  border-radius: 0;
+}
+
+.projects-section h2 {
+  color: #000;
+  margin-bottom: 25px;
+  font-size: 36px;
+  text-align: center;
+  font-weight: bold;
+  text-transform: uppercase;
+  letter-spacing: 3px;
+  border-bottom: 3px solid #000;
+  padding-bottom: 10px;
+}
+
+.projects-section p {
+  font-size: 18px;
+  color: #000;
+  text-align: center;
+}
+
+/* Contact Section - how to reach you */
+.contact-section {
+  background-color: rgba(0, 0, 0, 0.9);
+  padding: 50px;
+  margin-bottom: 40px;
+  border: 3px solid #fff;
+  border-radius: 0;
+}
+
+.contact-section h2 {
+  color: #fff;
+  margin-bottom: 25px;
+  font-size: 36px;
+  text-align: center;
+  font-weight: bold;
+  text-transform: uppercase;
+  letter-spacing: 3px;
+  border-bottom: 3px solid #fff;
+  padding-bottom: 10px;
+}
+
+.contact-section p {
+  font-size: 18px;
+  color: #fff;
+  text-align: center;
+  margin: 15px 0;
+  font-weight: bold;
+}
